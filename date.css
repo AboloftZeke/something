@@ -924,3 +924,10 @@ body {
 		display: none;
 	}
 }
+
+.scheduler-date-warning {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #c0392b;
+    opacity: 0.9;
+}
