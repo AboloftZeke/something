@@ -270,7 +270,18 @@ button { font: inherit; }
 .present-button:hover { filter: drop-shadow(0 1rem 0.75rem #57372b4d); transform: rotate(-1deg) scale(1.035); }
 .present-button:focus-visible { border-radius: 0.35rem; outline: 3px solid #7a343a; outline-offset: 0.45rem; }
 .present-button.is-opening { animation: unwrap-present 620ms ease-in-out forwards; pointer-events: none; }
-.present-image { display: block; width: 100%; height: auto; }
+.present-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(2px 0 0 #f8e8ca)
+    drop-shadow(-2px 0 0 #f8e8ca)
+    drop-shadow(0 2px 0 #f8e8ca)
+    drop-shadow(0 -2px 0 #f8e8ca)
+    drop-shadow(1.5px 1.5px 0 #f8e8ca)
+    drop-shadow(-1.5px -1.5px 0 #f8e8ca);
+}
 
 .cake { text-align: center; animation: reveal-cake 480ms ease-out both; }
 .cake-photo {
@@ -304,7 +315,14 @@ button { font: inherit; }
   display: block;
   width: clamp(4rem, 10vw, 6rem);
   height: auto;
-  filter: drop-shadow(0 0.45rem 0.4rem #57372b42);
+  filter:
+    drop-shadow(2px 0 0 #f8e8ca)
+    drop-shadow(-2px 0 0 #f8e8ca)
+    drop-shadow(0 2px 0 #f8e8ca)
+    drop-shadow(0 -2px 0 #f8e8ca)
+    drop-shadow(1.5px 1.5px 0 #f8e8ca)
+    drop-shadow(-1.5px -1.5px 0 #f8e8ca)
+    drop-shadow(0 0.45rem 0.4rem #57372b42);
   pointer-events: none;
 }
 
