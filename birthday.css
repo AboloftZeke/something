@@ -107,7 +107,7 @@ h2 {
 .opened-letter {
   position: relative;
   width: min(100%, 54rem);
-  aspect-ratio: 707 / 1000;
+  min-height: 76rem;
   margin-inline: auto;
   overflow: hidden;
   border: 1px solid #a65b4f;
@@ -123,7 +123,7 @@ h2 {
 
 .letter-content {
   width: min(76%, 39rem);
-  margin: clamp(7rem, 17%, 10rem) auto clamp(8rem, 18%, 11rem);
+  margin: clamp(7rem, 17%, 10rem) auto 22rem;
   padding: clamp(1.25rem, 4vw, 2.5rem);
   border-radius: 0.25rem;
   background: #f7e9cedd;
@@ -131,10 +131,50 @@ h2 {
   text-align: left;
 }
 
-.letter-content h2 { margin-bottom: 2rem; }
-.letter-body { font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.9; overflow-wrap: anywhere; }
-.letter-body p { margin: 0 0 1.6rem; }
+.letter-content h2 {
+  margin-bottom: 1.75rem;
+  font-size: clamp(1.55rem, 3.5vw, 1.95rem);
+  letter-spacing: 0.025em;
+}
+
+.letter-body {
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.letter-body p { margin: 0 0 1.35rem; }
 .letter-body p:last-child { margin-bottom: 0; }
+
+.sign-off {
+  width: min(100%, 20rem);
+  margin: 2.4rem 0 0 auto;
+  color: #633a35;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.sign-off p { margin: 0; }
+.sign-off .signature {
+  margin-top: 0.2rem;
+  color: #823b40;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.sign-off .tiny-note {
+  margin-top: 0.35rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.6rem;
+  opacity: 0.68;
+}
+
+.sign-off .postscript {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
 
 .surprise {
   margin-top: clamp(3rem, 8vw, 5rem);
@@ -178,6 +218,12 @@ h2 {
 
 .cake-icon { font-size: 3.25rem; }
 .cake p { margin-bottom: 0; line-height: 1.7; }
+.cake .cake-note {
+  margin-top: 0.45rem;
+  color: #753b3b;
+  font-size: 0.9rem;
+  font-style: italic;
+}
 footer { padding-top: 2rem; color: #94464a; font-size: 1.5rem; }
 
 @keyframes open-letter {
@@ -194,14 +240,17 @@ footer { padding-top: 2rem; color: #94464a; font-size: 1.5rem; }
   .birthday-page { width: min(100% - 1rem, 58rem); }
   .opened-letter {
     min-height: 48rem;
-    background-size: auto 100%;
+    background-size: 100% 100%;
   }
   .letter-content {
     width: 82%;
-    margin-block: 5.5rem 6.5rem;
+    margin-block: 5.5rem 22rem;
     padding: 1rem 0.5rem;
     box-shadow: 0 0 1.3rem 1rem #f7e9cedd;
   }
+
+  .letter-body { line-height: 1.68; }
+  .sign-off { width: 88%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
