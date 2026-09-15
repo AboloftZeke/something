@@ -275,7 +275,8 @@ button { font: inherit; }
 .sign-off .postscript { margin-top: 0.2rem; font-size: 1rem; }
 
 .accent-sticker,
-.chippy-sticker {
+.chippy-sticker,
+.portrait-sticker {
   display: block;
   height: auto;
   filter:
@@ -407,6 +408,16 @@ button { font: inherit; }
 .thought-bubble::before { right: -0.85rem; bottom: 0.25rem; width: 0.55rem; height: 0.55rem; }
 .thought-bubble::after { right: -1.25rem; bottom: -0.25rem; width: 0.25rem; height: 0.25rem; }
 
+.portrait-sticker {
+  position: absolute;
+  z-index: 3;
+  width: 6rem;
+  pointer-events: none;
+}
+
+.portrait-me { top: 18rem; left: -3.25rem; transform: rotate(-5deg); }
+.portrait-her { top: 36rem; right: -3.25rem; transform: rotate(5deg); }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -493,6 +504,9 @@ button { font: inherit; }
   .cake-note { font-size: 1rem; }
   .chippy-decoration { right: 7.5%; bottom: 4.5%; width: 5.4rem; }
   .thought-bubble { right: 70%; bottom: 78%; width: 7.6rem; padding: 0.55rem 0.65rem; font-size: 0.9rem; }
+  .portrait-sticker { width: 2.35rem; }
+  .portrait-me { top: 12rem; left: 0.15rem; }
+  .portrait-her { top: 30rem; right: 0.15rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
