@@ -316,29 +316,37 @@ button { font: inherit; }
 }
 
 .cake { text-align: center; animation: reveal-cake 480ms ease-out both; }
-.cake-photo {
-  display: block;
+
+.cake-polaroid {
   width: min(100%, 24rem);
-  height: auto;
   margin-inline: auto;
-  padding: 0.45rem 0.45rem 1.6rem;
+  padding: 0.55rem 0.55rem 0.9rem;
   border: 1px solid #d0b58b;
-  background: #fff8e8;
-  box-shadow: 0 0.8rem 1.6rem #57372b35;
-  transform: rotate(0.7deg);
+  background:
+    linear-gradient(145deg, #fff9ea, #f6e8cd 72%, #efdbb9);
+  box-shadow:
+    0 0.9rem 1.7rem #57372b32,
+    0 0.15rem 0.2rem #6d493126;
+  transform: rotate(0.65deg);
 }
 
-.cake-note { margin: 1.1rem 0 0; color: #753b3b; font-size: 1.2rem; }
+.cake-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d8c29e;
+}
+
+.photo-caption { padding: 0.8rem 0.45rem 0.05rem; }
+.cake-note { margin: 0.2rem 0 0; color: #753b3b; font-size: 1.08rem; line-height: 1.25; }
 
 .cake-name {
-  margin: 1.25rem 0 0;
+  margin: 0;
   color: #68393a;
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 400;
   line-height: 1.2;
 }
-
-.cake-name + .cake-note { margin-top: 0.25rem; }
 
 .sticker {
   position: absolute;
@@ -420,22 +428,30 @@ button { font: inherit; }
 }
 
 @media (max-width: 40rem) {
-  .birthday-page { width: min(100% - 0.75rem, 58rem); }
+  .birthday-page { width: min(100% - 0.5rem, 58rem); }
   .letter-experience { padding-block: 1rem; }
-  .closed-letter { padding-inline: 0; }
+  .closed-letter { max-width: 21.5rem; padding-inline: 0; }
+  .envelope-scene { height: clamp(11.5rem, 54vw, 12.5rem); }
   .wax-seal { width: 3rem; font-size: 1.5rem; }
   .opened-letter { min-height: 48rem; overflow: hidden; }
   .letter-content {
-    width: 82%;
-    margin-block: 5.5rem 22rem;
-    padding: 1rem 0.4rem;
+    width: 84%;
+    margin-block: 5rem 18rem;
+    padding: 0.9rem 0.65rem;
     box-shadow: 0 0 1.3rem 1rem #f7e9cedd;
   }
+  .letter-content h1 { margin-bottom: 1.4rem; }
   .letter-body { font-size: 1.08rem; line-height: 1.55; }
-  .sign-off { width: 88%; }
-  .present-button { width: min(65%, 11rem); }
-  .cake-photo { width: min(100%, 19rem); padding: 0.35rem 0.35rem 1.2rem; }
-  .sticker { top: auto; bottom: 6.5%; width: clamp(3.5rem, 16vw, 4.5rem); }
+  .letter-body p { margin-bottom: 1.15rem; }
+  .sign-off { width: 90%; margin-top: 2rem; }
+  .surprise { margin-top: 3.25rem; padding-top: 1.5rem; }
+  .surprise h2 { margin-bottom: 1.2rem; }
+  .present-button { width: min(63%, 10.5rem); }
+  .cake-polaroid { width: min(92%, 17rem); padding: 0.4rem 0.4rem 0.75rem; }
+  .photo-caption { padding-top: 0.65rem; }
+  .cake-name { font-size: 1.35rem; }
+  .cake-note { font-size: 1rem; }
+  .sticker { top: auto; bottom: 5.5%; width: clamp(3.5rem, 16vw, 4.25rem); }
   .sticker-me { left: 9%; }
   .sticker-her { right: 9%; }
 }
