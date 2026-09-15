@@ -9,7 +9,7 @@
 :root {
   color-scheme: light;
   color: #563a32;
-  background: #ead9ba;
+  background: #d6b48b;
   font-synthesis: none;
 }
 
@@ -21,8 +21,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 50% 15%, #fff8e9 0, transparent 35rem),
-    linear-gradient(145deg, #e7d2ad, #f4e8cf 48%, #d9bd96);
+    radial-gradient(circle at 50% 15%, #ead4ad 0, transparent 35rem),
+    linear-gradient(145deg, #d3ad80, #dec096 48%, #c99f72);
 }
 
 button { font: inherit; }
@@ -160,19 +160,36 @@ button { font: inherit; }
   position: relative;
   width: min(100%, 54rem);
   min-height: 76rem;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid #a65b4f;
   background-color: #f1dfbd;
   background-image: url("Birthday/Letter_Template.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  box-shadow: 0 1.5rem 3.5rem #5c392f38;
+  box-shadow: 0 1.4rem 3rem #68452f40;
   transform-origin: top center;
   animation: letter-settle 520ms ease-out both;
 }
 
+.opened-letter::after {
+  position: absolute;
+  z-index: 1;
+  right: 7.5%;
+  bottom: 4.5%;
+  left: 7.5%;
+  height: 17.5%;
+  background:
+    radial-gradient(ellipse at 20% 55%, #cda97588, transparent 42%),
+    radial-gradient(ellipse at 76% 48%, #d9b98a99, transparent 40%),
+    linear-gradient(to bottom, transparent, #d1aa78 8%, #d4ad7d 84%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
 .letter-content {
+  position: relative;
+  z-index: 2;
   width: min(76%, 39rem);
   margin: clamp(7rem, 17%, 10rem) auto 22rem;
   padding: clamp(1.25rem, 4vw, 2.5rem);
@@ -270,6 +287,30 @@ button { font: inherit; }
 
 .cake-note { margin: 1.1rem 0 0; color: #753b3b; font-size: 1.2rem; }
 
+.cake-name {
+  margin: 1.25rem 0 0;
+  color: #68393a;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cake-name + .cake-note { margin-top: 0.25rem; }
+
+.sticker {
+  position: absolute;
+  z-index: 3;
+  top: 18rem;
+  display: block;
+  width: clamp(4rem, 10vw, 6rem);
+  height: auto;
+  filter: drop-shadow(0 0.45rem 0.4rem #57372b42);
+  pointer-events: none;
+}
+
+.sticker-me { left: -3.25rem; transform: rotate(-5deg); }
+.sticker-her { top: 36rem; right: -3.25rem; transform: rotate(5deg); }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -328,7 +369,7 @@ button { font: inherit; }
   .letter-experience { padding-block: 1rem; }
   .closed-letter { padding-inline: 0; }
   .wax-seal { width: 3rem; font-size: 1.5rem; }
-  .opened-letter { min-height: 48rem; }
+  .opened-letter { min-height: 48rem; overflow: hidden; }
   .letter-content {
     width: 82%;
     margin-block: 5.5rem 22rem;
@@ -339,6 +380,9 @@ button { font: inherit; }
   .sign-off { width: 88%; }
   .present-button { width: min(65%, 11rem); }
   .cake-photo { width: min(100%, 19rem); padding: 0.35rem 0.35rem 1.2rem; }
+  .sticker { top: auto; bottom: 6.5%; width: clamp(3.5rem, 16vw, 4.5rem); }
+  .sticker-me { left: 9%; }
+  .sticker-her { right: 9%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
