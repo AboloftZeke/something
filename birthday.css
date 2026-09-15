@@ -17,6 +17,7 @@
 [hidden] { display: none !important; }
 
 body {
+  position: relative;
   min-width: 20rem;
   min-height: 100vh;
   margin: 0;
@@ -27,7 +28,38 @@ body {
 
 button { font: inherit; }
 
+.paper-dust {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.paper-dust span {
+  position: absolute;
+  top: var(--dust-top);
+  left: var(--dust-left);
+  width: var(--dust-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #765039;
+  opacity: 0.13;
+  animation: dust-drift var(--dust-duration) ease-in-out var(--dust-delay) infinite alternate;
+}
+
+.paper-dust span:nth-child(1) { --dust-top: 12%; --dust-left: 8%; --dust-size: 3px; --dust-duration: 19s; --dust-delay: -4s; }
+.paper-dust span:nth-child(2) { --dust-top: 23%; --dust-left: 91%; --dust-size: 2px; --dust-duration: 24s; --dust-delay: -11s; }
+.paper-dust span:nth-child(3) { --dust-top: 39%; --dust-left: 5%; --dust-size: 4px; --dust-duration: 27s; --dust-delay: -8s; }
+.paper-dust span:nth-child(4) { --dust-top: 47%; --dust-left: 95%; --dust-size: 3px; --dust-duration: 21s; --dust-delay: -14s; }
+.paper-dust span:nth-child(5) { --dust-top: 63%; --dust-left: 11%; --dust-size: 2px; --dust-duration: 25s; --dust-delay: -7s; }
+.paper-dust span:nth-child(6) { --dust-top: 72%; --dust-left: 88%; --dust-size: 4px; --dust-duration: 29s; --dust-delay: -18s; }
+.paper-dust span:nth-child(7) { --dust-top: 84%; --dust-left: 4%; --dust-size: 3px; --dust-duration: 23s; --dust-delay: -3s; }
+.paper-dust span:nth-child(8) { --dust-top: 92%; --dust-left: 94%; --dust-size: 2px; --dust-duration: 26s; --dust-delay: -16s; }
+
 .birthday-page {
+  position: relative;
+  z-index: 1;
   width: min(100% - 1.25rem, 58rem);
   margin-inline: auto;
 }
@@ -382,6 +414,11 @@ button { font: inherit; }
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes dust-drift {
+  from { transform: translate3d(-0.15rem, 0.3rem, 0); }
+  to { transform: translate3d(0.35rem, -1.8rem, 0); }
+}
+
 @media (max-width: 40rem) {
   .birthday-page { width: min(100% - 0.75rem, 58rem); }
   .letter-experience { padding-block: 1rem; }
@@ -404,6 +441,8 @@ button { font: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .paper-dust { display: none; }
+
   *,
   *::before,
   *::after {

@@ -6,8 +6,27 @@ const present = document.getElementById('present');
 const presentButton = document.getElementById('open-present');
 const cake = document.getElementById('cake');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const letterSound = new Audio('Birthday/letter-open.mp3');
+const giftSound = new Audio('Birthday/gift-open.mp3');
+let letterOpening = false;
+let presentOpening = false;
+
+letterSound.preload = 'auto';
+letterSound.volume = 0.18;
+giftSound.preload = 'auto';
+giftSound.volume = 0.16;
+
+const playSound = (sound) => {
+  sound.currentTime = 0;
+  sound.play().catch(() => {
+    // Audio is optional; browser restrictions or loading failures must not block the reveal.
+  });
+};
 
 openLetterButton.addEventListener('click', () => {
+  if (letterOpening) return;
+  letterOpening = true;
+  playSound(letterSound);
   openLetterButton.setAttribute('aria-expanded', 'true');
 
   const revealLetter = () => {
@@ -30,6 +49,9 @@ openLetterButton.addEventListener('click', () => {
 });
 
 presentButton.addEventListener('click', () => {
+  if (presentOpening) return;
+  presentOpening = true;
+  playSound(giftSound);
   presentButton.setAttribute('aria-expanded', 'true');
 
   const revealCake = () => {
