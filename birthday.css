@@ -1,75 +1,215 @@
 :root {
   color-scheme: light;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #513c38;
-  background: #fbf5ed;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #523d32;
+  background: #eee0c5;
   font-synthesis: none;
 }
+
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-body { margin: 0; }
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  background:
+    radial-gradient(circle at top, #fff8e9 0, transparent 34rem),
+    linear-gradient(145deg, #ead8b9, #f5ead5 48%, #dfc7a5);
+}
+
+button { font: inherit; }
+
 .birthday-page {
-  width: min(100% - 2rem, 48rem);
+  width: min(100% - 1.5rem, 58rem);
   margin-inline: auto;
   padding-block: clamp(2.5rem, 8vw, 5.5rem) 1.5rem;
 }
-.hero, .present, .cake, footer { text-align: center; }
-.hero { padding: 0 0.5rem 2.75rem; }
+
+.hero,
+.letter-experience,
+footer { text-align: center; }
+
+.hero { padding: 0 0.5rem clamp(2.5rem, 7vw, 4.5rem); }
+
 .eyebrow {
-  color: #895249;
+  margin: 0;
+  color: #8b4243;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
 }
-.decoration { color: #b66c61; font-size: 1.6rem; margin-block: 1.5rem; }
-h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
-h1 { font-size: clamp(2.25rem, 7vw, 3.8rem); line-height: 1.15; margin: 0 auto 1.25rem; max-width: 12em; }
-h2 { font-size: clamp(1.65rem, 4vw, 2rem); line-height: 1.25; margin: 0.65rem 0 1.5rem; }
-.subtitle { font-size: 1.05rem; line-height: 1.7; }
-.letter {
-  background: #fffdf9;
-  border: 1px solid #ead9cc;
-  border-radius: 1.25rem;
-  padding: clamp(1.5rem, 5vw, 3.5rem);
-  box-shadow: 0 10px 35px #67413008;
+
+.decoration {
+  margin-block: 1.4rem;
+  color: #a44d4d;
+  font-size: 1.5rem;
 }
-.letter .eyebrow { margin-top: 0; }
-.letter-body { font-size: 1.0625rem; line-height: 1.9; overflow-wrap: anywhere; }
-.letter-body p { margin: 0 0 1.5rem; }
-.letter-body p:last-child { margin-bottom: 0; }
-.present { padding: 3rem 0 2rem; }
-.gift { display: block; font-size: 2.75rem; }
-button {
+
+h1,
+h2,
+h3 { font-weight: 400; }
+
+h1 {
+  max-width: 12em;
+  margin: 0 auto 1.15rem;
+  color: #542f2f;
+  font-size: clamp(2.25rem, 7vw, 4rem);
+  line-height: 1.12;
+}
+
+h2 {
+  margin: 0.65rem 0 1.5rem;
+  color: #603536;
+  font-size: clamp(1.65rem, 4vw, 2.15rem);
+  line-height: 1.25;
+}
+
+.subtitle { margin-bottom: 0; font-size: 1.08rem; line-height: 1.7; }
+
+.closed-letter {
+  width: min(100%, 35rem);
+  margin-inline: auto;
+  padding: clamp(2rem, 7vw, 3.5rem) 1.5rem;
+  border: 2px solid #a85555;
+  border-radius: 0.4rem;
+  background:
+    linear-gradient(35deg, transparent 49.5%, #c7948050 50%, transparent 50.5%),
+    linear-gradient(-35deg, transparent 49.5%, #c7948050 50%, transparent 50.5%),
+    #f5e6c7;
+  box-shadow: 0 1.25rem 2.5rem #67413028;
+  transform: rotate(-1.5deg);
+  transition: opacity 280ms ease, transform 420ms ease;
+}
+
+.closed-letter.is-opening { opacity: 0; transform: rotate(0) scale(1.03); }
+.envelope { display: block; margin-bottom: 0.8rem; font-size: 3.25rem; }
+
+#open-letter,
+.present-button {
   border: 0;
   border-radius: 999px;
-  padding: 1rem 1.5rem;
-  max-width: 100%;
-  background: #914c50;
-  color: #fffdf9;
-  font: 600 1rem/1.4 "Segoe UI", Arial, sans-serif;
+  background: #873d42;
+  color: #fff8e8;
   cursor: pointer;
-  transition: background 160ms ease;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 650;
 }
-button:hover { background: #753d41; }
-button:focus-visible { outline: 3px solid #513c38; outline-offset: 5px; }
-.cake { padding-top: 1rem; animation: reveal 350ms ease-out both; }
-.cake-placeholder {
+
+#open-letter { padding: 0.95rem 1.45rem; }
+#open-letter:hover,
+.present-button:hover { background: #692d32; }
+#open-letter:focus-visible,
+.present-button:focus-visible { outline: 3px solid #5d302f; outline-offset: 5px; }
+
+.opened-letter {
+  position: relative;
+  width: min(100%, 54rem);
+  aspect-ratio: 707 / 1000;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid #a65b4f;
+  background-color: #f1dfbd;
+  background-image: url("Birthday/Letter_Template.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 1.5rem 3.5rem #5c392f38;
+  transform-origin: top center;
+  animation: open-letter 520ms ease-out both;
+}
+
+.letter-content {
+  width: min(76%, 39rem);
+  margin: clamp(7rem, 17%, 10rem) auto clamp(8rem, 18%, 11rem);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: 0.25rem;
+  background: #f7e9cedd;
+  box-shadow: 0 0 2rem 1.6rem #f7e9cedd;
+  text-align: left;
+}
+
+.letter-content h2 { margin-bottom: 2rem; }
+.letter-body { font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.9; overflow-wrap: anywhere; }
+.letter-body p { margin: 0 0 1.6rem; }
+.letter-body p:last-child { margin-bottom: 0; }
+
+.surprise {
+  margin-top: clamp(3rem, 8vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid #a95e5970;
+  text-align: center;
+}
+
+.surprise h3 { margin: 0 0 1.5rem; color: #68393a; font-size: 1.3rem; line-height: 1.5; }
+
+.present-button {
   display: grid;
+  gap: 0.8rem;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  padding: 1.2rem;
+  transition: opacity 220ms ease, transform 220ms ease, background 160ms ease;
+}
+
+.present-placeholder {
+  padding: 1.4rem 0.75rem;
+  border: 1px dashed #f4d7bd;
+  border-radius: 0.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.present-label { display: block; }
+.present-button.is-opening { opacity: 0; transform: scale(0.92); }
+
+.cake {
+  display: grid;
+  min-height: 13rem;
   place-content: center;
-  min-height: 16rem;
   padding: 1.5rem;
-  border: 2px dashed #c99d8e;
-  border-radius: 1.25rem;
-  background: #f6e8de;
+  border: 2px dashed #a45a55;
+  border-radius: 0.35rem;
+  background: #f0dcb5cc;
+  animation: reveal-cake 360ms ease-out both;
 }
-.cake-placeholder span { font-size: 3rem; }
-.cake-placeholder p { line-height: 1.7; }
-footer { color: #b66c61; font-size: 1.5rem; padding-top: 2rem; }
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.cake-icon { font-size: 3.25rem; }
+.cake p { margin-bottom: 0; line-height: 1.7; }
+footer { padding-top: 2rem; color: #94464a; font-size: 1.5rem; }
+
+@keyframes open-letter {
+  from { opacity: 0; transform: rotate(-1.5deg) scale(0.88); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
 }
+
+@keyframes reveal-cake {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 40rem) {
+  .birthday-page { width: min(100% - 1rem, 58rem); }
+  .opened-letter {
+    min-height: 48rem;
+    background-size: auto 100%;
+  }
+  .letter-content {
+    width: 82%;
+    margin-block: 5.5rem 6.5rem;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 0 1.3rem 1rem #f7e9cedd;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }
