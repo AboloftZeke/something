@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Date Planner</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="date.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf5ed">
+  <title>Happy Birthday, Allysa!</title>
+  <link rel="stylesheet" href="birthday.css">
+  <script src="birthday.js" defer></script>
 </head>
 <body>
-	<main class="card" aria-label="Date planner invitation">
-		<div class="sticker-layer" aria-hidden="true"></div>
-		<section class="invite">
-			<h1 class="typing title">Hello Allyson</h1>
-			<p class="typing prompt">Will you watch Toy Story 5 with me?</p>
-			<div class="actions" role="group" aria-label="Response options">
-				<button class="choice yes" type="button">Yes</button>
-				<button class="choice no" type="button">No</button>
-			</div>
-		</section>
-		
-	</main>
-	<script src="date.js"></script>
+  <main class="birthday-page">
+    <header class="hero">
+      <p class="eyebrow">A little birthday celebration</p>
+      <div class="decoration" aria-hidden="true">✦ &nbsp; ♡ &nbsp; ✦</div>
+      <h1>Happy Birthday, Allysa! 🎂</h1>
+      <!-- Temporary subtitle; easy to personalize later. -->
+      <p class="subtitle">I made this little page just for you.</p>
+    </header>
+    <article class="letter" aria-labelledby="letter-title">
+      <p class="eyebrow">For you</p>
+      <h2 id="letter-title">A birthday note</h2>
+      <!-- Replace with the final 2–3 paragraph birthday message. -->
+      <div class="letter-body">
+        <p>[Birthday message paragraph 1 will go here.]</p>
+        <p>[Birthday message paragraph 2 will go here.]</p>
+        <p>[Birthday message paragraph 3 will go here.]</p>
+      </div>
+    </article>
+    <section class="present" aria-labelledby="present-title">
+      <span class="gift" aria-hidden="true">🎁</span>
+      <h2 id="present-title">One more little surprise</h2>
+      <button id="open-present" type="button" aria-expanded="false" aria-controls="cake">Open your present 🎁</button>
+      <noscript><p>Please enable JavaScript to open your present.</p></noscript>
+    </section>
+    <section id="cake" class="cake" aria-labelledby="cake-title" hidden>
+      <h2 id="cake-title" tabindex="-1">A birthday treat for you</h2>
+      <!-- Replace with the real cake photo and descriptive alt text. -->
+      <div class="cake-placeholder">
+        <span aria-hidden="true">🎂</span>
+        <p>[Real cake photo will go here.]</p>
+      </div>
+    </section>
+    <footer aria-hidden="true">♡</footer>
+  </main>
 </body>
 </html>
