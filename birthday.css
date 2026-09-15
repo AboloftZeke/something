@@ -259,8 +259,10 @@ button { font: inherit; }
 .letter-body p:last-child { margin-bottom: 0; }
 
 .sign-off {
+  position: relative;
   width: min(100%, 20rem);
   margin: 2.25rem 0 0 auto;
+  padding-right: 3.5rem;
   color: #633a35;
   font-size: 1.12rem;
   line-height: 1.35;
@@ -271,6 +273,24 @@ button { font: inherit; }
 .sign-off .signature { margin-top: 0.15rem; color: #823b40; font-size: 2rem; }
 .sign-off .tiny-note { margin-top: 0.25rem; font-size: 0.6rem; opacity: 0.7; }
 .sign-off .postscript { margin-top: 0.2rem; font-size: 1rem; }
+
+.accent-sticker,
+.chippy-sticker {
+  display: block;
+  height: auto;
+  filter:
+    drop-shadow(2px 0 0 #f8e8ca)
+    drop-shadow(-2px 0 0 #f8e8ca)
+    drop-shadow(0 2px 0 #f8e8ca)
+    drop-shadow(0 -2px 0 #f8e8ca)
+    drop-shadow(1.5px 1.5px 0 #f8e8ca)
+    drop-shadow(-1.5px -1.5px 0 #f8e8ca)
+    drop-shadow(0 0.35rem 0.35rem #57372b3d);
+}
+
+.accent-sticker { position: absolute; z-index: 3; pointer-events: none; }
+.hirono-sticker { top: -0.25rem; right: 0.1rem; width: 3.15rem; transform: rotate(5deg) scale(1.65); transform-origin: center right; }
+.clover-sticker { right: 0.5rem; bottom: -0.55rem; width: 2.35rem; transform: rotate(-8deg); }
 
 .surprise {
   margin-top: clamp(3rem, 8vw, 5rem);
@@ -348,26 +368,44 @@ button { font: inherit; }
   line-height: 1.2;
 }
 
-.sticker {
+.chippy-decoration {
   position: absolute;
   z-index: 3;
-  top: 18rem;
-  display: block;
-  width: clamp(4rem, 10vw, 6rem);
-  height: auto;
-  filter:
-    drop-shadow(2px 0 0 #f8e8ca)
-    drop-shadow(-2px 0 0 #f8e8ca)
-    drop-shadow(0 2px 0 #f8e8ca)
-    drop-shadow(0 -2px 0 #f8e8ca)
-    drop-shadow(1.5px 1.5px 0 #f8e8ca)
-    drop-shadow(-1.5px -1.5px 0 #f8e8ca)
-    drop-shadow(0 0.45rem 0.4rem #57372b42);
-  pointer-events: none;
+  right: 9%;
+  bottom: 5.25%;
+  width: 6.25rem;
 }
 
-.sticker-me { left: -3.25rem; transform: rotate(-5deg); }
-.sticker-her { top: 36rem; right: -3.25rem; transform: rotate(5deg); }
+.chippy-sticker { width: 100%; transform: rotate(3deg); }
+
+.thought-bubble {
+  position: absolute;
+  right: 78%;
+  bottom: 74%;
+  width: 9rem;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid #8b4b46;
+  border-radius: 50%;
+  background: #fff3d9;
+  box-shadow: 0 0.45rem 0.65rem #57372b2e;
+  color: #713c3d;
+  font-size: 1rem;
+  line-height: 1.05;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.thought-bubble::before,
+.thought-bubble::after {
+  position: absolute;
+  border: 2px solid #8b4b46;
+  border-radius: 50%;
+  background: #fff3d9;
+  content: "";
+}
+
+.thought-bubble::before { right: -0.85rem; bottom: 0.25rem; width: 0.55rem; height: 0.55rem; }
+.thought-bubble::after { right: -1.25rem; bottom: -0.25rem; width: 0.25rem; height: 0.25rem; }
 
 .visually-hidden {
   position: absolute;
@@ -443,7 +481,9 @@ button { font: inherit; }
   .letter-content h1 { margin-bottom: 1.4rem; }
   .letter-body { font-size: 1.08rem; line-height: 1.55; }
   .letter-body p { margin-bottom: 1.15rem; }
-  .sign-off { width: 90%; margin-top: 2rem; }
+  .sign-off { width: 92%; margin-top: 2rem; padding-right: 3rem; }
+  .hirono-sticker { width: 2.75rem; }
+  .clover-sticker { right: 0.3rem; width: 2.05rem; }
   .surprise { margin-top: 3.25rem; padding-top: 1.5rem; }
   .surprise h2 { margin-bottom: 1.2rem; }
   .present-button { width: min(63%, 10.5rem); }
@@ -451,9 +491,8 @@ button { font: inherit; }
   .photo-caption { padding-top: 0.65rem; }
   .cake-name { font-size: 1.35rem; }
   .cake-note { font-size: 1rem; }
-  .sticker { top: auto; bottom: 5.5%; width: clamp(3.5rem, 16vw, 4.25rem); }
-  .sticker-me { left: 9%; }
-  .sticker-her { right: 9%; }
+  .chippy-decoration { right: 7.5%; bottom: 4.5%; width: 5.4rem; }
+  .thought-bubble { right: 70%; bottom: 78%; width: 7.6rem; padding: 0.55rem 0.65rem; font-size: 0.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
