@@ -4,33 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee0c5">
-  <title>Happy Birthday, Allysa!</title>
+  <title>A Letter for Allyson</title>
   <link rel="stylesheet" href="birthday.css">
   <script src="birthday.js" defer></script>
 </head>
 <body>
   <main class="birthday-page">
-    <header class="hero">
-      <p class="eyebrow">A little birthday celebration</p>
-      <div class="decoration" aria-hidden="true">✦ &nbsp; ♡ &nbsp; ✦</div>
-      <h1>Happy Birthday, Allysa! 🎂</h1>
-      <p class="subtitle">I made this little page just for you.</p>
-    </header>
+    <section class="letter-experience" aria-label="Birthday letter">
+      <button class="closed-letter" id="open-letter" type="button" aria-expanded="false" aria-controls="opened-letter">
+        <span class="envelope-scene" aria-hidden="true">
+          <span class="envelope-back"></span>
+          <span class="inner-note"><span>For Allyson</span></span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="wax-seal">♡</span>
+        </span>
+        <span class="open-label">Open the letter</span>
+      </button>
 
-    <section class="letter-experience" aria-labelledby="letter-heading">
-      <div class="closed-letter" id="closed-letter">
-        <span class="envelope" aria-hidden="true">💌</span>
-        <p class="eyebrow">A note for you</p>
-        <h2 id="letter-heading">There’s something inside</h2>
-        <button id="open-letter" type="button" aria-expanded="false" aria-controls="opened-letter">
-          Open your letter 💌
-        </button>
-      </div>
-
-      <article class="opened-letter" id="opened-letter" aria-label="Birthday letter" hidden>
+      <article class="opened-letter" id="opened-letter" aria-label="Birthday letter for Allyson" hidden>
         <div class="letter-content">
-          <p class="eyebrow">For Allysa</p>
-          <h2 tabindex="-1" id="message-heading">HAPPY BIRTHDAY ALLYSON!!</h2>
+          <p class="letter-recipient">For Allysa</p>
+          <h1 tabindex="-1" id="message-heading">HAPPY BIRTHDAY ALLYSON!!</h1>
           <div class="letter-body" aria-labelledby="message-heading">
             <p>Thank you for continuing to be one of the best surprises I’ve ever had this year, and honestly, in my life. Despite all the problems I’ve had and all the times na baka ang hirap ko rin samahan, you’ve still stuck with me through it all. I hope you continue to do so, because I know I’ll do the same for you.</p>
             <p>I hope na this year gives you back a little bit of everything you’ve given to others. Deserve mo lahat ng success na you’ve been hoping and working for, even if right now, parang hindi mo pa nakikita yung progress na gusto mo. Take things lang at your own pace, and pleasee, wag ka masyadong hard sa sarili mo. You’ll get there someday, and habang papunta ka doon, andito ako para i-support ka and to help you however I can.</p>
@@ -45,26 +40,21 @@
           </div>
 
           <section class="surprise" aria-labelledby="surprise-heading">
-            <h3 id="surprise-heading">btw, meron akong a little something for you →</h3>
+            <h2 id="surprise-heading">btw, meron akong a little something for you →</h2>
             <div id="present">
-              <!-- Replace this block with the final present PNG. -->
-              <button class="present-button" id="open-present" type="button" aria-expanded="false" aria-controls="cake">
-                <span class="present-placeholder" aria-hidden="true">[Present PNG will go here.]</span>
-                <span class="present-label">Open your present 🎁</span>
+              <button class="present-button" id="open-present" type="button" aria-expanded="false" aria-controls="cake" aria-label="Open your present">
+                <img class="present-image" src="Birthday/Present_Picture.png" alt="">
+                <span class="visually-hidden">Open your present</span>
               </button>
             </div>
             <div class="cake" id="cake" aria-live="polite" hidden>
-              <!-- Replace this block with the real cake photo and descriptive alt text. -->
-              <span class="cake-icon" aria-hidden="true">🎂</span>
-              <p>[Real cake photo will go here.]</p>
+              <img class="cake-photo" src="Birthday/Cake_Picture.jpg" alt="A birthday cake with cream frosting and cocoa dusting">
               <p class="cake-note">bigay ko sa’yo mamaya</p>
             </div>
           </section>
         </div>
       </article>
     </section>
-
-    <footer aria-hidden="true">♡</footer>
   </main>
 </body>
 </html>

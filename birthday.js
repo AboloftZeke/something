@@ -1,5 +1,5 @@
 const openLetterButton = document.getElementById('open-letter');
-const closedLetter = document.getElementById('closed-letter');
+const closedLetter = openLetterButton;
 const openedLetter = document.getElementById('opened-letter');
 const messageHeading = document.getElementById('message-heading');
 const present = document.getElementById('present');
@@ -26,7 +26,7 @@ openLetterButton.addEventListener('click', () => {
   }
 
   closedLetter.classList.add('is-opening');
-  window.setTimeout(revealLetter, 280);
+  window.setTimeout(revealLetter, 1900);
 });
 
 presentButton.addEventListener('click', () => {
@@ -43,5 +43,5 @@ presentButton.addEventListener('click', () => {
   }
 
   presentButton.classList.add('is-opening');
-  window.setTimeout(revealCake, 220);
+  window.setTimeout(revealCake, 620);
 });
